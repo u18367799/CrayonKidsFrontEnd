@@ -1,0 +1,12 @@
+:host {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    padding: 10% 0;
+    background-color: grey !important;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+  
+    scroll-behavior: initial;
+  }

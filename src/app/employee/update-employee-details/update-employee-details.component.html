@@ -1,0 +1,280 @@
+<main class="main">
+
+  <mat-card>
+    <header>
+      <mat-card-title>
+        <span class="material-icons">person</span> Update Employee
+      </mat-card-title>
+    </header>
+  
+<mat-card-content>
+<form [formGroup]="employeeForm" class="form-inline" (ngSubmit)="updateEmployee()">
+  <br><br>
+  <!-- <div class="row">
+    <div class="container text-center">
+      <mat-form-field appearance="fill">
+        <mat-label>Employee Type</mat-label>
+        <mat-select formControlName="employeeType" required>
+          <mat-option>Administrator</mat-option>`
+
+          <mat-option>Teacher</mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>      
+  </div> -->
+  
+  <div class="row">
+    <div class="col-lg-4">
+      <mat-form-field>  
+        <label for="name">Name:</label>
+        <br>
+        <input type="text" name="Name" [(ngModel)]="employeeService.employeeData.Name" class="form-control" formControlName="Name" value="{{employeeDetails.Name}}"> <br>
+        <!-- <input type="text" class="form-control" formControlName="Name"> <br> -->
+        <small *ngIf="employeeForm.get('Name').invalid && employeeForm.get('Name').touched" class="text-danger">Required (max 50 character, no special characters)</small>
+
+      </mat-form-field> 
+     </div>
+
+    <div class="col-lg-2">
+      <mat-form-field>  
+       <label for="surname">Surname:</label>   
+        <br>
+       <input type="text" name="Surname" [(ngModel)]="employeeService.employeeData.Surname" class="form-control" formControlName="surname" value="{{employeeDetails.Surname}}"> <br>
+       <small *ngIf="employeeForm.get('surname').invalid && employeeForm.get('surname').touched" class="text-danger">Required (max 50 character, no special characters)</small>
+      </mat-form-field>
+    </div>
+  </div>    
+
+  <div class="row">
+    <div class="col-lg-4">
+      <label for="birthDate">Birth Date:</label>
+      <br>
+      <input type="date"  name="Birth_Date" [(ngModel)]="employeeService.employeeData.Birth_Date" class="form-control" formControlName="birthDate" value="{{employeeDetails.Birth_Date}}"> <br>
+      <small *ngIf="employeeForm.get('birthDate').invalid && employeeForm.get('birthDate').touched" class="text-danger">Birth Date is required</small>
+    </div>
+
+    <div class="col-lg-2">
+        <label for="hireDate">Hire Date:</label>
+        <br>
+        <input type="date" name="Hire_Date" [(ngModel)]="employeeService.employeeData.Hire_Date" class="form-control" formControlName="hireDate" value="{{employeeDetails.Hire_Date}}"> <br>
+        <small *ngIf="employeeForm.get('hireDate').invalid && employeeForm.get('hireDate').touched" class="text-danger">Hire Date is required</small>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-lg-4">
+      <mat-form-field>  
+        <label for="email">Email address:</label>
+        <br>
+        <input type="email" name="Email_Address" [(ngModel)]="employeeService.employeeData.Email_Address" class="form-control" formControlName="email" value="{{employeeDetails.Email_Address}}"> <br>
+        <small *ngIf="employeeForm.get('email').invalid && employeeForm.get('email').touched" class="text-danger">Enter a valid email</small>
+      </mat-form-field>
+    </div>
+
+    <div class="col-lg-2">
+      <mat-form-field>  
+        <label for="contactNr">Contact Number:</label>
+        <br>
+        <input type="text" name="Contact_No" [(ngModel)]="employeeService.employeeData.Contact_No" class="form-control" formControlName="contactNr" value="{{employeeDetails.Contact_No}}"> <br>
+        <small *ngIf="employeeForm.get('contactNr').invalid && employeeForm.get('contactNr').touched" class="text-danger">Enter a valid contact number</small>
+      </mat-form-field>
+    </div>
+  </div>
+
+
+ <div class="row">
+  <div class="col-lg-2">
+    <mat-form-field>  
+    <label for="streetAddress">Street Address:</label>
+    <br>
+    <input type="text" name="Street_Address" [(ngModel)]="employeeService.employeeData.Street_Address" class="form-control" formControlName="streetAddress" value="{{employeeDetails.Street_Address}}"> <br>
+    <small *ngIf="employeeForm.get('streetAddress').invalid && employeeForm.get('streetAddress').touched" class="text-danger">Required (max 50 characters)</small>
+    </mat-form-field>
+  </div>
+ </div>
+
+   <div class="row">
+    <div class="col-lg-8">
+      <mat-form-field>  
+       <label for="address2">Address Line 2:</label>
+        <br>
+        <input type="text" name="Address_2" [(ngModel)]="employeeService.employeeData.Address_2" class="form-control" value="{{employeeDetails.Address_2}}">
+      </mat-form-field>
+     </div>
+     </div> 
+
+
+  <div class="row">
+    <div class="col-lg-4">   
+      <mat-form-field appearance="fill">
+        <label>Province</label><br>
+        <select class="form-control" name="Province" [(ngModel)]="employeeService.employeeData.Province" value="{{employeeDetails.Province}}">
+          <option value="Select Province" selected>Select a Province</option>
+          <option value="Gauteng">Gauteng</option>
+          <option value="Eastern Cape" >Eastern Cape</option>
+          <option value="Free State">Free State</option>
+          <option value="KwaZulu-Natal">KwaZulu-Natal</option>
+        </select>
+      </mat-form-field>
+    </div>
+
+    <div class="col-lg-4">   
+      <mat-form-field>  
+    <label for="city">City:</label>   
+    <br>
+    <input type="text" name="City" [(ngModel)]="employeeService.employeeData.City" class="form-control" formControlName="city" value="{{employeeDetails.City}}"> <br>
+    <small *ngIf="employeeForm.get('city').invalid && employeeForm.get('city').touched" class="text-danger">Required (max 50 characters)</small>
+    </mat-form-field> 
+  </div>
+
+  <div class="col-lg-4">   
+    <mat-form-field>  
+    <label for="postalCode">Postal Code:</label>   
+    <br>
+    <input type="text" name="Postal_Code" [(ngModel)]="employeeService.employeeData.Postal_Code" class="form-control" formControlName="postalCode" value="{{employeeDetails.Postal_Code}}"> <br>
+    <small *ngIf="employeeForm.get('postalCode').invalid && employeeForm.get('postalCode').touched" class="text-danger">Required (max 10 characters, numbers only)</small>
+    </mat-form-field>
+  </div>
+  </div>
+<br>
+  <div class="addButton">
+    <button type="submit" [disabled]="!employeeForm.valid" class="btn btn-success" >Add Employee</button>
+  </div>
+
+  </form>
+</mat-card-content>
+</mat-card>
+</main>
+
+
+
+
+
+
+
+
+
+
+<!-- <main class="main">
+
+  <mat-card>
+    <header>
+      <mat-card-title>
+        <span class="material-icons">person</span> Update Employee
+      </mat-card-title>
+    </header>
+  
+<mat-card-content>
+<form class="form-inline" (ngSubmit)="onSubmit()">
+  <br><br>
+
+  
+  <div class="row">
+    <div class="col-lg-4">
+      <mat-form-field>  
+        <label for="name">Name:</label>
+        <br>
+        <input type="text" class="form-control" [required]="true" id="name"  value={{employee.name}} formControlName="name">
+      </mat-form-field> 
+     </div>
+
+    <div class="col-lg-2">
+      <mat-form-field>  
+       <label for="surname">Surname:</label>   
+        <br>
+       <input type="text" class="form-control" [required]="true"  id="surname"   value={{employee.surname}} formControlName="surname">
+      </mat-form-field>
+    </div>
+  </div>    
+
+  <div class="row">
+    <div class="col-lg-4">
+      <label for="birthDate">Birth Date:</label>
+      <br>
+      <input type="date" class="form-control" id="birthDate" [required]="true" value={{employee.birthDate}} formControlName="birthDate">   
+    </div>
+
+    <div class="col-lg-2">
+        <label for="hireDate">Hire Date:</label>
+        <br>
+        <input type="date" class="form-control" id="hireDate" [required]="true" value={{employee.hireDate}} formControlName="hireDate">
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-lg-4">
+      <mat-form-field>  
+        <label for="email">Email address:</label>
+        <br>
+        <input type="email" class="form-control" id="email" [required]="true" value={{employee.email}} formControlName="email">
+      </mat-form-field>
+    </div>
+
+    <div class="col-lg-2">
+      <mat-form-field>  
+        <label for="contactNr">Contact Number:</label>
+        <br>
+        <input type="text" class="form-control" id="contactNr" [required]="true" value={{employee.contactNr}} formControlName="contactNr">
+      </mat-form-field>
+    </div>
+  </div>
+
+
+ <div class="row">
+  <div class="col-lg-2">
+    <mat-form-field>  
+    <label for="streetAddress">Street Address:</label>
+    <br>
+    <input type="text" class="form-control" id="streetAddress" [required]="true" value={{employee.streetAddress}} formControlName="streetAddress">
+    </mat-form-field>
+  </div>
+ </div>
+
+   <div class="row">
+    <div class="col-lg-8">
+      <mat-form-field>  
+       <label for="address2">Address 2:</label>
+        <br>
+        <input type="text" class="form-control" id="address2" [required]="true" value={{employee.address2}} formControlName="address2">
+      </mat-form-field>
+     </div>
+     </div> 
+
+
+  <div class="row">
+    <div class="col-lg-4">   
+      <mat-form-field>    
+        <label for="province">Province:</label>
+        <br>
+       <input type="text" class="form-control" id="province" [required]="true" value={{employee.province}} formControlName="province">
+      </mat-form-field>
+    </div>
+
+    <div class="col-lg-4">   
+      <mat-form-field>  
+    <label for="city">City:</label>   
+    <br>
+    <input type="text" class="form-control" id="city" [required]="true" value={{employee.city}} formControlName="city">
+    </mat-form-field> 
+  </div>
+
+  <div class="col-lg-4">   
+    <mat-form-field>  
+    <label for="postalCode">Postal Code:</label>   
+    <br>
+    <input type="text" class="form-control" id="postalCode" [required]="true" value={{employee.postalCode}} formControlName="postalCode">
+    </mat-form-field>
+  </div>
+  </div>
+<br>
+  <div class="addButton">
+    <button type="submit" class="btn btn-success" a routerLink="/employeelist">Update Employee</button>
+  </div>
+
+  </form>
+</mat-card-content>
+</mat-card>
+</main>
+
+
+ -->

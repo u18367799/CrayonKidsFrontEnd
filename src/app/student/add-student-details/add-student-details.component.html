@@ -1,0 +1,94 @@
+<main class="main">
+
+    <mat-card>
+      <header>
+        <mat-card-title>
+          <span class="material-icons">person</span> Add student
+        </mat-card-title>
+      </header>
+    
+  <mat-card-content>
+  <form [formGroup]="studentForm" class="form-inline" (ngSubmit)="onSubmit()">
+    <br><br>
+    <!-- <div class="row">
+      <div class="container text-center">
+        <mat-form-field appearance="fill">
+          <mat-label>student Type</mat-label>
+          <mat-select formControlName="studentType" required>
+            <mat-option>Administrator</mat-option>`
+  
+            <mat-option>Teacher</mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>      
+    </div> -->
+    
+    <div class="row">
+      <div class="col-lg-6">
+        <mat-form-field>  
+          <label for="name">Name:</label>
+          <br>
+          <input type="text" name="Name" [(ngModel)]="studentData.Student_Name" class="form-control" formControlName="Name"> <br>
+          <small *ngIf="studentForm.get('Name').invalid && studentForm.get('Name').touched" class="text-danger">Name is required (max 50 characters)</small>
+  
+        </mat-form-field> 
+       </div>
+  
+      <div class="col-lg-6">
+        <mat-form-field>  
+         <label for="surname">Surname:</label>   
+          <br>
+         <input type="text" name="Surname" [(ngModel)]="studentData.Student_Surname" class="form-control" formControlName="surname"> <br>
+         <small *ngIf="studentForm.get('surname').invalid && studentForm.get('surname').touched" class="text-danger">Surname is required (max 50 characters)</small>
+        </mat-form-field>
+      </div>
+    </div>    
+  
+
+  
+    <div class="row">
+      <div class="col-lg-6">
+        <mat-form-field>  
+          <label for="grade">Grade :</label>
+          <br>
+          <input type="grade" name="Student_Grade" [(ngModel)]="studentData.Student_Grade" class="form-control" formControlName="grade"> <br>
+          <small *ngIf="studentForm.get('grade').invalid && studentForm.get('grade').touched" class="text-danger">Student Grade is required (min 0, max 100)</small>
+        </mat-form-field>
+      </div>
+  
+      <!-- <div class="col-lg-6">
+        <mat-form-field>  
+          <label for="parent">Parent:</label>
+          <br>
+          <input type="number" name="Contact_No" [(ngModel)]="studentData.Parent_Guardian_ID" class="form-control" formControlName="parent"> <br>
+          <small *ngIf="studentForm.get('parent').invalid && studentForm.get('parent').touched" class="text-danger">Select a parent</small>
+        </mat-form-field>
+      </div> -->
+
+      <!-- <mat-form-field appearance="fill"> -->
+        <label>Parent/Guardian</label><br>
+        <select class="form-control"  [(ngModel)]="selectedN" >
+            <option value="0" >--Select Parent--</option>
+ 
+            <option *ngFor="let parent of parents" value="{{parent.Parent_Guardian_ID}}">
+              {{parent.Parent_Name}} {{parent.Parent_Surname}} </option>
+          </select>
+      <!-- </mat-form-field> -->
+    </div>
+  
+  
+  
+
+  <br>
+    <div class="addButton">
+      <button type="submit" [disabled]="!studentForm.valid" class="btn btn-success" >Add student</button>
+    </div>
+  
+    </form>
+  </mat-card-content>
+  </mat-card>
+  </main>
+  
+  
+  
+  

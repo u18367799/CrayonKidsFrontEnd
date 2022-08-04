@@ -1,0 +1,46 @@
+:host {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    padding: 10% 0;
+    background-image: url('./../../assets/preschool.jpg') !important;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;  
+    scroll-behavior: initial;
+  }
+  
+  .mat-form-field {
+    width: 40%;
+    min-width: 400px;
+    height: 400%;
+  }
+  
+  mat-card-title,
+  mat-card-content {
+    display: flex;
+    justify-content: center;
+    
+  
+  }
+  .card{
+    display: flex;
+    flex-direction: row;
+    height: 800px;
+    align-content: space-between;
+    position: top;
+    color:aquamarine;
+   
+}
+  .mat-card-title {
+    border-bottom: 4px solid pink;
+    padding-bottom: 0.5em;
+  }
+  
+  .button-div {
+    display: flex;
+    justify-content:center;
+    height: 40px;
+    padding-top: 90px;     
+  }
+  

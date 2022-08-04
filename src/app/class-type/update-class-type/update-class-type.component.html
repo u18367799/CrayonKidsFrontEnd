@@ -1,0 +1,53 @@
+<main class="main">
+
+    <mat-card>
+      <header>
+        <mat-card-title>
+          <span class="material-icons">person</span> Update Class 
+        </mat-card-title>
+      </header>
+    
+  <mat-card-content>
+  <form [formGroup]="classTypeForm" class="form-inline" (ngSubmit)="updateClassType()">
+    <br><br>
+    <!-- <div class="row">
+      <div class="container text-center">
+        <mat-form-field appearance="fill">
+          <mat-label>classType Type</mat-label>
+          <mat-select formControlName="classTypeType" required>
+            <mat-option>Administrator</mat-option>`
+  
+            <mat-option>Teacher</mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>      
+    </div> -->
+
+    <div class="row">
+            
+        <div class="col-lg-6">
+          <mat-form-field>  
+           <label for="Grade">Grade:</label>   
+            <br>
+           <input type="text" name="Grade" [(ngModel)]="classTypeService.classTypeData.Grade" class="form-control" formControlName="Grade" value="{{classTypeDetails.Grade}}"> <br>
+           <small *ngIf="classTypeForm.get('Grade').invalid && classTypeForm.get('Grade').touched" class="text-danger">Grade is required (min 0, max 100)</small>
+          </mat-form-field>
+        </div>
+      </div>  
+  
+  
+
+  <br>
+    <div class="addButton">
+      <button type="submit" [disabled]="!classTypeForm.valid" class="btn btn-success" >Add Class </button>
+    </div>
+  
+    </form>
+  </mat-card-content>
+  </mat-card>
+  </main>
+
+  
+  
+  
+  

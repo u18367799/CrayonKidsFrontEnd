@@ -1,0 +1,72 @@
+<main class="main">
+
+    <mat-card>
+      <header>
+        <mat-card-title>
+          <span class="material-icons">person</span> Update parent
+        </mat-card-title>
+      </header>
+    
+  <mat-card-content>
+  <form [formGroup]="parentForm" class="form-inline" (ngSubmit)="updateParent()">
+    <br><br>
+    
+    <div class="row">
+      <div class="col-lg-6">
+        <mat-form-field>  
+          <label for="name">Name:</label>
+          <br>
+          <input type="text" name="Name" [(ngModel)]="parentService.parentData.Parent_Name" class="form-control" formControlName="Parent_Name" value="{{parentDetails.Parent_Name}}"> <br>
+          <small *ngIf="parentForm.get('Parent_Name').invalid && parentForm.get('Parent_Name').touched" class="text-danger">Required (max 50 characters, no special characters)</small>
+  
+        </mat-form-field> 
+       </div>
+  
+      <div class="col-lg-6">
+        <mat-form-field>  
+         <label for="surname">Surname:</label>   
+          <br>
+         <input type="text" name="Parent_Surname" [(ngModel)]="parentService.parentData.Parent_Surname" class="form-control" formControlName="Parent_Surname" value="{{parentDetails.Parent_Surname}}"> <br>
+         <small *ngIf="parentForm.get('Parent_Surname').invalid && parentForm.get('Parent_Surname').touched" class="text-danger">Required (max 50 characters, no special characters)</small>
+        </mat-form-field>
+      </div>
+    </div>    
+  
+
+  
+    <div class="row">
+      <div class="col-lg-6">
+        <mat-form-field>  
+          <label for="email">Email address:</label>
+          <br>
+          <input type="email" name="Parent_Email_Address" [(ngModel)]="parentService.parentData.Parent_Email_Address" class="form-control" formControlName="Parent_Email_Address" value="{{parentDetails.Parent_Email_Address}}"> <br>
+          <small *ngIf="parentForm.get('Parent_Email_Address').invalid && parentForm.get('Parent_Email_Address').touched" class="text-danger">Enter a valid email</small>
+        </mat-form-field>
+      </div>
+  
+      <div class="col-lg-6">
+        <mat-form-field>  
+          <label for="contactNr">Contact Number:</label>
+          <br>
+          <input type="text" name="Parent_Contact_No" [(ngModel)]="parentService.parentData.Parent_Contact_No" class="form-control" formControlName="Parent_Contact_No" value="{{parentDetails.Parent_Email_Address}}"> <br>
+          <small *ngIf="parentForm.get('Parent_Contact_No').invalid && parentForm.get('Parent_Contact_No').touched" class="text-danger">Enter a valid contact number</small>
+        </mat-form-field>
+      </div>
+    </div>
+  
+  
+
+  <br>
+    <div class="addButton">
+      <button type="submit" [disabled]="!parentForm.valid" class="btn btn-success" >Add parent</button>
+    </div>
+  
+    </form>
+  </mat-card-content>
+  </mat-card>
+  </main>
+
+  
+  
+  
+  

@@ -1,0 +1,21 @@
+<div class="container text-center">
+    <h2>Add Employee</h2>
+  </div>
+    <br>
+   <div class="container text-center">
+<form [formGroup]="assessmentForm" class="form-inline" (ngSubmit)="onSubmit()">
+    <div class="form-group">     
+      <label for="name">Assessment Details:</label>
+      <br>
+      <input type="text" class="form-control" [required]="true" id="details" formControlName="details">
+    </div>    
+
+  <br><br>
+
+  <div class="form-group">
+    <button type="submit" class="btn btn-default" [disabled]="!assessmentForm.valid">Add Assessment</button>
+  </div>
+
+  </form>
+   </div>
+   

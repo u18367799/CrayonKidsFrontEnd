@@ -1,0 +1,48 @@
+<main class="main">
+  <mat-card>
+    <header>
+      <mat-card-title>
+        <span class="material-icons">school</span> Crayon Kids Login
+      </mat-card-title>
+    </header>
+    <mat-card-content>
+      <form >
+        <p>
+          <mat-form-field>
+            <label hidden for="username">Username</label>
+            <span class="material-icons" matPrefix>person</span>
+            <input id="username" type="text" placeholder="Username"
+              formControlName="username" matInput>
+            
+          </mat-form-field>
+        </p>
+
+        <p>
+          <mat-form-field>
+            <label hidden for="password">Password</label>
+            <span class="material-icons" matPrefix>lock</span>
+            <input type="password" placeholder="Password" formControlName="password" matInput>
+          </mat-form-field>
+        </p>
+        <p>
+          <label for="remember_me-input">
+            <mat-checkbox type="checkbox" id="remember_me" formControlName="rememberMe"></mat-checkbox>
+            Remember me
+          </label>
+        </p>      
+       
+      </form>
+      <br><br>
+      
+     
+    </mat-card-content>
+    <div class="row">
+      <div class="col-lg-2">      
+        <button type="submit"  mat-raised-button color="primary" (click)="go()">Login</button> 
+      </div>
+      <div class="col-lg-2"> 
+        <button  mat-flat-button color="warn">Create Account</button>    
+      </div>
+    </div>
+  </mat-card>
+</main>

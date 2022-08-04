@@ -1,0 +1,50 @@
+:host {
+    height: 140%;
+    display: flex;
+    justify-content: center;
+    padding: 10% 0;
+    background-image: url('./../../../assets/preschool.jpg') !important; 
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;  
+    scroll-behavior: initial;
+  }
+ 
+.card{
+    display: flex;
+    flex-direction: row;
+    width: 500px;
+    align-content: space-between;
+    position: top;
+    color:aquamarine;
+   
+}
+mat-card-title,
+mat-card-content {
+  display: flex;
+  justify-content: center;
+  align-content: space-between;
+}
+.mat-card-title {
+    border-bottom: 4px solid pink;
+    padding-bottom: 0.5em;
+  }
+ 
+  .form-control{
+    border-bottom: 2px solid aqua;
+  }
+
+  .addButton{
+    display: flex;
+    justify-content:center;
+  }
+.postalCode{
+       width: 4px;
+   }
+.mat-form-field {
+    width: 40%;
+    min-width: 300px;
+    height: 400%;
+    
+  }
+  

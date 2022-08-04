@@ -1,0 +1,28 @@
+<div class="container text-center">
+    <h2>Add Allergy</h2>
+</div>
+<br>
+
+<div class="container text-center">
+  <form [formGroup]="allergyForm" class="form-inline" (ngSubmit)="onSubmit()">
+    <div class="form-group">     
+      <label for="allergyDetails">Details:</label>
+      <br>
+      <input type="text" class="form-control" [required]="true" id="allergyDetails" formControlName="allergyDetails">
+    </div>
+
+    <br><br> 
+
+    <div class="form-group">
+      <label for="allergyDate">Allergy Date:</label>
+      <br>
+      <input type="date" class="form-control" id="allergyDate" [required]="true" formControlName="allergyDate">
+    </div>
+
+    <br><br>
+
+    <div class="form-group">
+      <button type="submit" class="btn btn-default" [disabled]="!allergyForm.valid">Add Allergy</button>
+    </div>
+  </form>
+</div>
